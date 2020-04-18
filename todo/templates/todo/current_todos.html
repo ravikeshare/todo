@@ -1,0 +1,21 @@
+
+{% extends 'todo/base.html' %}
+
+
+{% block content %}
+
+<div class="container">
+	{% if todo_list %}
+	<h1>current todos</h1>
+	{% for todo in todo_list %}
+
+		<a href="{% url 'edit_todo' todo.id %}"><h3>{{todo.title}}</h3></a>
+	{% endfor %}
+
+	{% else %}
+	<p> Seems you don't have any To dos !!!!</p>
+	{% endif%}
+
+</div>
+
+{% endblock %}
